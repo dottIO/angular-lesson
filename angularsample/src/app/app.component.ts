@@ -1,3 +1,4 @@
+// 2. アプリケーションのコードが初めて入ってくる。
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angularsample';
+  public title = 'dott sample';
+  public subTitle = 'カンタン、とどける。';
+
+  public changeTitle() {
+    this.title = 'dott';
+  }
 }
