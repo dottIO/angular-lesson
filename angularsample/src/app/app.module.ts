@@ -10,6 +10,11 @@ import { SampleAComponent } from './pages/sample-a/sample-a.component';
 import { SampleBComponent } from './pages/sample-b/sample-b.component';
 import { UserListComponent } from './elements/user-list/user-list.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatButtonModule, MatInputModule } from '@angular/material';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +25,10 @@ import { UserListComponent } from './elements/user-list/user-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

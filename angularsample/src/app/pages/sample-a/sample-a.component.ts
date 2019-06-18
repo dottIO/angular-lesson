@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sample-a.component.scss']
 })
 export class SampleAComponent implements OnInit {
-
+  public pageTitle = 'Sample A';
   public users = [{
     name: 'shimizu',
     age: 35,

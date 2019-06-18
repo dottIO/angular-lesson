@@ -1,7 +1,14 @@
-<!-- <button (click)="changeTitle()">タイトルを変更</button><br>
-{{subTitle}}<br>
-<input type="text" value="こんにちは"><br>
-<input type="text" [(ngModel)]="subTitle"> -->
+<h1>{{pageTitle}}</h1>
+<button mat-raised-button color="accent" (click)="changeTitle()">タイトルを変更</button>
+<button mat-raised-button color="primary" (click)="changeTitle()">タイトルを変更</button>
+<!-- {{subTitle}}<br>
+<input type="text" value="こんにちは"><br> -->
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" [(ngModel)]="pageTitle" name="subTitle">
+  </mat-form-field>
+</form>
+
 <!-- [] Ctrl => View -->
 <!-- () View => Ctrl -->
 <!-- <br><br><br><br> -->
