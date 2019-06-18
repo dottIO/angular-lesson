@@ -1,4 +1,11 @@
 <h1>{{pageTitle}}</h1>
+
+合計金額(自作関数): {{calcCurrencySvc.getCurrencyText(totalCost)}}<br>
+合計金額(Pipe): {{totalCost | currency : 'JPY'}}<br>
+<br>
+{{today | date : 'yy年MM月dd日'}}<br>
+<br>
+<br>
 <button mat-raised-button color="accent" (click)="changeTitle()">タイトルを変更</button>
 <button mat-raised-button color="primary" (click)="changeTitle()">タイトルを変更</button>
 <!-- {{subTitle}}<br>

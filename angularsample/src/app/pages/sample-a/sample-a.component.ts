@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalcCurrencyService } from 'src/app/services/calc-currency.service';
 
 @Component({
   selector: 'app-sample-a',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SampleAComponent implements OnInit {
   public pageTitle = 'Sample A';
+  public totalCost = 1000000;
+  public today = new Date();
   public users = [{
     name: 'shimizu',
     age: 35,
@@ -29,7 +32,9 @@ export class SampleAComponent implements OnInit {
     gender: 'unkown'
   }];
 
-  constructor() { }
+  constructor(
+    public calcCurrencySvc: CalcCurrencyService
+  ) { }
 
   ngOnInit() {
   }
