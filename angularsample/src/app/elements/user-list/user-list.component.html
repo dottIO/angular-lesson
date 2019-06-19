@@ -1,4 +1,6 @@
-ユーザーリストのコンポーネント
+ユーザーリストのコンポーネント<br>
+<span (click)="changeMessage()">{{message}}</span><br>
+<span (click)="unshift()">Unshift</span>
 <!-- {{ users | json }}<br> -->
 <div *ngFor="let user of userList">
   名前: {{user.name}}<br>

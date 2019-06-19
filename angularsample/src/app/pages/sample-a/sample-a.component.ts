@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { CalcCurrencyService } from 'src/app/services/calc-currency.service';
+import { SampleBComponent } from '../sample-b/sample-b.component';
 
 @Component({
   selector: 'app-sample-a',
@@ -10,6 +11,7 @@ export class SampleAComponent implements OnInit {
   public pageTitle = 'Sample A';
   public totalCost = 1000000;
   public today = new Date();
+  public message = '親から子へ';
   public users = [{
     name: 'shimizu',
     age: 35,
@@ -34,9 +36,37 @@ export class SampleAComponent implements OnInit {
 
   constructor(
     public calcCurrencySvc: CalcCurrencyService
-  ) { }
+  ) {
+    this.pageTitle = 'Sample Const';
+  }
 
   ngOnInit() {
+    this.pageTitle = 'Sample On Init';
+
+    // プリミティブ型 文字列, 数値
+    const sampleA = 'こんにちは';
+    let sampleB = sampleA;
+    sampleB = 'こんばんは';
+    console.log(sampleA);
+
+    // 参照型 配列, オブジェクト
+    const sampleArrA = ['こんにちは'];
+    const sampleArrB = sampleArrA; // x => ['こんにちは'] o => sampleArrA
+    sampleArrB[0] = 'こんばんは';
+
+    console.log(sampleArrA);
+  }
+
+  eventTest(pageTitle) {
+    // if (pageTitle.length > 10) {
+    //   this.pageTitle = this.pageTitle.slice(0, 10);
+    // }
+  }
+
+  check(e) {
+    console.log(e);
+    // console.log(this.message);
+
   }
 
 }

@@ -1,4 +1,11 @@
-<p>
-  sample-b works!
-</p>
-<app-user-list [userList]="users"></app-user-list>
+<div *ngFor="let user of users">
+  名前: {{user.name}}<br>
+  年齢: {{user.age}}<br>
+  性別: <span [ngClass]="getGenderClass(user.gender)">{{getGenderText(user.gender)}}</span><br>
+  <!-- 性別: <span class="genderText" [ngClass]="(user.gender === 'male')? 'maleText' : 'femaleText'">{{(user.gender === 'male')? '男' : '女'}}</span><br>
+  性別: <span [ngClass]="getGenderClass(user.gender)">{{(user.gender === 'male')? '男' : '女'}}</span><br>  性別: <span style="" [ngStyle]="{color: (user.gender === 'male')? 'blue' : 'red'}">{{(user.gender === 'male')? '男' : '女'}}</span><br>
+  性別: <span class="genderText" [ngClass]="(user.gender === 'male')? 'maleText' : 'femaleText'">{{(user.gender === 'male')? '男' : '女'}}</span><br>
+  性別: <span [ngClass]="getGenderClass(user.gender)">{{(user.gender === 'male')? '男' : '女'}}</span><br> -->
+  <span *ngIf="user.age >= 30">健康診断を受けましょう</span><br>
+  ==========
+</div>

@@ -6,17 +6,33 @@
 {{today | date : 'yy年MM月dd日'}}<br>
 <br>
 <br>
-<button mat-raised-button color="accent" (click)="changeTitle()">タイトルを変更</button>
-<button mat-raised-button color="primary" (click)="changeTitle()">タイトルを変更</button>
+<button mat-raised-button color="accent" (click)="eventTest()">タイトルを変更</button>
+<button mat-raised-button color="primary" (click)="eventTest()">タイトルを変更</button>
+<br>
+<br>
+
 <!-- {{subTitle}}<br>
 <input type="text" value="こんにちは"><br> -->
 <form class="example-form">
   <mat-form-field class="example-full-width">
-    <input matInput type="text" [(ngModel)]="pageTitle" name="subTitle">
+    <input matInput type="text"
+      [(ngModel)]="pageTitle"
+      (keyup)="eventTest(pageTitle)"
+      name="pageTitle"
+      placeholder="keyup">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" [(ngModel)]="pageTitle" (keydown)="eventTest(pageTitle)" name="pageTitle"
+      placeholder="keydown">
   </mat-form-field>
 </form>
 
 <!-- [] Ctrl => View -->
 <!-- () View => Ctrl -->
 <!-- <br><br><br><br> -->
-<app-user-list [userList]="users"></app-user-list>
+<span (click)="check(message)">中身をチェック</span><br>
+<!-- {{users | json}}<br> -->
+<app-user-list
+  [userList]="users"
+  [message]="message"
+  (childToParent)="check($event)"></app-user-list>
